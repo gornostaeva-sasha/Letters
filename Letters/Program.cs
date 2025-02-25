@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class ArrayExample
 {
@@ -6,13 +6,20 @@ class ArrayExample
     {
         char[] letters = { 'f', 'r', 'e', 'd', ' ', 's', 'm', 'i', 't', 'h' };
         string name = "";
-        int[] a = new int[10];
-        for (int i = 0; i < letters.Length; i++)
+
+        foreach (char letter in letters)
         {
-            name += letters[i];
-            a[i] = i + 1;
-            SendMessage(name, a[i]);
+            if (letter != ' ')
+            {
+                name += letter;
+            }
         }
+
+        for (int i = 1; i <= 10; i++)
+        {
+            SendMessage(name, i);
+        }
+
         Console.ReadKey();
     }
 
